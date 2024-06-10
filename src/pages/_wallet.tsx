@@ -1,5 +1,5 @@
 import Transfer from "./_transfer";
-import { ParticleAuthModule } from "@biconomy/particle-auth"; // Adjusted import
+import { ParticleAuthModule, ParticleProvider } from "@biconomy/particle-auth"; // Adjusted import
 import { Wallet, providers, ethers } from "ethers";
 import {
   createSmartAccountClient,
@@ -11,7 +11,7 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import React from "react";
 
 // Import the package as default and destructure the required exports
-import particleProviderPackage from "@particle-network/provider";
+import * as particleProviderPackage from "@particle-network/provider";
 const { ParticleProvider, ParticleDelegateProvider } = particleProviderPackage;
 
 export default function SmartWallet() {
