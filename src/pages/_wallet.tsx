@@ -1,5 +1,5 @@
 import Transfer from "./_transfer";
-import { ParticleAuthModule, ParticleProvider } from "@biconomy/particle-auth"; // Adjusted import
+import { ParticleAuthModule } from "@biconomy/particle-auth"; // Adjusted import
 import { Wallet, providers, ethers } from "ethers";
 import {
   createSmartAccountClient,
@@ -9,6 +9,10 @@ import {
 } from "@biconomy/account";
 import { Fragment, useEffect, useRef, useState } from "react";
 import React from "react";
+
+// Import ParticleProvider as default and destructure it
+import pkg from "@particle-network/provider";
+const { ParticleProvider } = pkg;
 
 export default function SmartWallet() {
   const [loading, setLoading] = useState(false);
@@ -26,7 +30,7 @@ export default function SmartWallet() {
     },
   });
 
-  const particleProvider = new ParticleProvider(particle.auth);
+
 
   const chains = [
     {
