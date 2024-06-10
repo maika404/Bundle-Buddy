@@ -10,9 +10,9 @@ import {
 import { Fragment, useEffect, useRef, useState } from "react";
 import React from "react";
 
-// Import ParticleProvider as default and destructure it
-import pkg from "@particle-network/provider";
-const { ParticleProvider } = pkg;
+// Import the package as default and destructure the required exports
+import particleProviderPackage from "@particle-network/provider";
+const { ParticleProvider, ParticleDelegateProvider } = particleProviderPackage;
 
 export default function SmartWallet() {
   const [loading, setLoading] = useState(false);
